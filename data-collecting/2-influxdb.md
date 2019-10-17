@@ -71,10 +71,10 @@ Telegraf parses log data via grok, which is a powerful parser used by all sorts 
 To run this telegraf:
 
 ```bash
-nohub telegraf --config temperature-logging.conf
+nohup telegraf --config temperature-logging.conf
 ```
 
-use nohub to run in the background
+use nohup to run in the background
 
 # Checking out the data
 
@@ -94,7 +94,7 @@ influx
 To export data from influx you can run:
 
 ```bash
-influx -database 'temperature' -execute 'SELECT * FROM measurements' -format csv > test.csv
+influx -database 'temperature' -execute 'SELECT * FROM room_temperature_humidity' -format csv > test.csv
 ```
 
 It will be exported to a file called `test.csv`.
